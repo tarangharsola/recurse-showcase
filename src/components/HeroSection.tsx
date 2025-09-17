@@ -1,4 +1,9 @@
 import { Button } from "@/components/ui/button";
+import { ShimmerButton } from "@/components/ui/shimmer-button";
+import { SlidingNumber } from "@/components/ui/sliding-number";
+import { GradientDots } from "@/components/ui/gradient-dots";
+import { LumaSpin } from "@/components/ui/luma-spin";
+import { AnimatedStats } from "@/components/AnimatedStats";
 import { ArrowRight, Sparkles } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 import floatingSphere from "@/assets/floating-sphere.png";
@@ -6,6 +11,9 @@ import floatingSphere from "@/assets/floating-sphere.png";
 export const HeroSection = () => {
   return (
     <section id="home" className="min-h-screen relative overflow-hidden bg-gradient-subtle">
+      {/* Gradient Dots Background */}
+      <GradientDots className="opacity-30" />
+      
       {/* Bleu.sg inspired floating elements */}
       <div className="absolute top-20 left-20 w-24 h-24 floating-animation">
         <div className="w-full h-full bg-primary rounded-full opacity-30 shadow-lg" />
@@ -21,6 +29,14 @@ export const HeroSection = () => {
       </div>
       <div className="absolute bottom-1/3 right-1/3 w-12 h-12 floating-animation" style={{ animationDelay: "3s" }}>
         <div className="w-full h-full bg-secondary/30 rotate-45" />
+      </div>
+      
+      {/* Luma Spin decorative elements */}
+      <div className="absolute top-20 right-20 floating-animation" style={{ animationDelay: "1s" }}>
+        <LumaSpin size={32} />
+      </div>
+      <div className="absolute bottom-20 left-16 floating-animation" style={{ animationDelay: "3s" }}>
+        <LumaSpin size={24} />
       </div>
       
       {/* Circular image elements inspired by bleu.sg */}
@@ -57,15 +73,17 @@ export const HeroSection = () => {
             Storytelling, and Soul.
           </p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons with Shimmer Effect */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-white shadow-elegant group px-8 py-6 text-lg rounded-full"
+            <ShimmerButton 
+              className="px-8 py-6 text-lg"
+              background="linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)))"
             >
-              Our Work
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
+              <span className="flex items-center gap-2">
+                Our Work
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </span>
+            </ShimmerButton>
             <Button 
               size="lg" 
               variant="outline" 
@@ -75,21 +93,8 @@ export const HeroSection = () => {
             </Button>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 mt-16 pt-8 border-t border-white/20">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">200+</div>
-              <div className="text-foreground/70 font-medium">Brands Transformed</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">5x</div>
-              <div className="text-foreground/70 font-medium">Average ROI Increase</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">24/7</div>
-              <div className="text-foreground/70 font-medium">Creative Innovation</div>
-            </div>
-          </div>
+          {/* Stats with Animated Numbers */}
+          <AnimatedStats />
         </div>
       </div>
 
