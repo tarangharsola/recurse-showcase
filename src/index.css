@@ -8,9 +8,9 @@ All colors MUST be HSL for proper theming support
 
 @layer base {
   :root {
-    /* Core Background & Text */
-    --background: 320 40% 98%;
-    --foreground: 240 15% 9%;
+    /* Core Background & Text - Bleu.sg inspired light purple */
+    --background: 280 25% 96%;
+    --foreground: 240 20% 15%;
 
     /* Card System */
     --card: 0 0% 100%;
@@ -49,11 +49,11 @@ All colors MUST be HSL for proper theming support
     /* Design System Variables */
     --radius: 1rem;
 
-    /* Custom Gradients */
+    /* Custom Gradients - Bleu.sg style */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(320 60% 92%), hsl(280 70% 88%));
+    --gradient-hero: linear-gradient(135deg, hsl(280 30% 95%), hsl(270 35% 93%));
     --gradient-accent: linear-gradient(90deg, hsl(var(--accent)), hsl(var(--secondary)));
-    --gradient-subtle: linear-gradient(180deg, hsl(320 30% 98%), hsl(280 25% 96%));
+    --gradient-subtle: linear-gradient(180deg, hsl(280 25% 96%), hsl(270 20% 94%));
 
     /* Shadows & Effects */
     --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
